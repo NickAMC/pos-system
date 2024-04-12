@@ -17,17 +17,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb)); /* Assuming you want to keep the text color */
+  background-color: rgb(119, 203, 240); /* Set the background color to plain blue */
 }
+
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
