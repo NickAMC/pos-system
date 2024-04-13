@@ -7,7 +7,9 @@ const LoginForm: React.FC = () => {
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault(); // Prevent default form submission behavior
   // Handle form submission logic here
-  console.log("Form submitted");
+  console.log('homie')
+  console.log('hihi')
+  console.log('dog')
 };
 
   return (
