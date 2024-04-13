@@ -1,14 +1,19 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 
 const LoginForm: React.FC = () => {
 
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault(); // Prevent default form submission behavior
   // Handle form submission logic here
+  console.log("ur username is: ", username);
+  console.log('ur password is: ', password)
   console.log("Form submitted");
 };
+
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -18,12 +23,24 @@ const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         {/* Added flex-column and centered items */}
         <div className="flex flex-col justify-left">
           <label htmlFor="username">Username:</label>
-          <input type="text" id="username" name="username" />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
         <br />
         <div className="flex flex-col justify-left">
           <label htmlFor="password">Password:</label>
-          <input type="text" id="password" name="password" />
+          <input
+            type="text"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
         <br />
         <br />
