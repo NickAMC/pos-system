@@ -12,15 +12,17 @@ app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // MongoDB connection setup
-mongoose.connect(MONGODB_URI)
-.then(() => {
-  console.log('Connected to MongoDB');
-  app.listen(PORT, ()=>{
-     console.log('Server is running on port: ' + PORT)
-})
-}).catch((err) => {
-  console.error('Error connecting to MongoDB:', err);
-})
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => {
+    console.log("Connected to MongoDB");
+    app.listen(PORT, () => {
+      console.log("Server is running on port: " + PORT);
+    });
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
 
 app.post('/', async (req, res) => {
      const { username, password} = req.body
